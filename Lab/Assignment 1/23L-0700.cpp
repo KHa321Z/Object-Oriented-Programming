@@ -4,10 +4,12 @@ using namespace std;
 
 int* InputArray(int &);
 void OutputArray(int *, const int &);
-int* AllocateAndCopyArray(int *, const int &);
-void ExpandArray();
+int* AllocateAndCopyArray(int *, int &);
+void ExpandArray(int &);
 
 int* InputArray(int &size) {
+
+    int index = 0;
 
     cout << "Enter size of Array: ";
     cin >> size;
@@ -18,12 +20,28 @@ int* InputArray(int &size) {
 
     int *dynamicArray = new int [size];
 
-    for (int i = 0; i < size; i++)
-        cout << "Element at Index " << i << ": ", cin >> *(dynamicArray + i);
+    while (true) {
+
+        cout << "Enter Element at Index " << index << ": ";
+        cin >> *(dynamicArray + index);
+
+        if (*(dynamicArray + index) == -1) {
+
+            *(dynamicArray + index) = 0;
+            size = index;
+
+            break;
+        
+        }
+
+        if (index == size - 1)
+            dynamicArray = AllocateAndCopyArray(dynamicArray, size);
+
+        index++;
+
+    }
 
     cout << endl;
-
-    OutputArray(dynamicArray, size);
 
     return dynamicArray;
 
@@ -55,42 +73,19 @@ int* AllocateAndCopyArray(int *myArray, int &size) {
 
 }
 
-void ExpandArray() {
+void ExpandArray(int &size) {
 
-    int temp, index = 0, size = 5;
-    int *dynamicArray = new int [size];
+    int temp;
+    int *dynamicArray = InputArray(size);
 
     cout << endl;
     cout << "Expand Array:";
     cout << endl;
 
-    while (true) {
+    for (int i = 0; i <= size / 2; i++)
+        temp = *(dynamicArray + size - i - 1), *(dynamicArray + size - i - 1) = *(dynamicArray + i), *(dynamicArray + i) = temp;
 
-        cout << "Enter Element at Index " << index << ": ";
-        cin >> *(dynamicArray + index);
-
-        if (*(dynamicArray + index) == -1) {
-
-            *(dynamicArray + index) = 0;
-            index--;
-
-            break;
-        
-        }
-
-        if (index == size)
-            dynamicArray = AllocateAndCopyArray(dynamicArray, size);
-
-        index++;
-
-    }
-
-    for (int i = 0; i < index / 2; i++)
-        temp = *(dynamicArray + index - i), *(dynamicArray + index - i) = *(dynamicArray + i), *(dynamicArray + i) = temp;
-
-    cout << endl;
-
-    OutputArray(dynamicArray, index);
+    OutputArray(dynamicArray, size);
 
     delete[] dynamicArray;
 
@@ -100,8 +95,7 @@ int main() {
 
     int size;
 
-    delete[] InputArray(size);
-    ExpandArray();
+    ExpandArray(size);
 
     return 0;
 
