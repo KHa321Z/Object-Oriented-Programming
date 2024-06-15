@@ -1,0 +1,45 @@
+44	//Total No of Students
+Afzaal Amjad
+Rashid Mahmood
+Abubaker Saleem
+Yousaf Khan
+Ahsan Zafar
+Husnain Rafiq
+Afraz Kamal
+Taha Tahir
+Aqib Javed
+Mansoor Hassan
+Amber Warsi
+M Usman
+Hamza Yaseen
+Lubaina Zubair
+Muhammad Ubaidullah
+Rabia Noor
+Hassan khan
+Moin Ali
+Ali Hussnain
+Rahat mubeen
+Fatima Tahira
+Ali Awan
+Muhammad Ali
+Aena Maryam
+Hunain Haider
+Bilal Ahmad
+Saif Ul Islam
+Adil Ashraf
+Hasan Zahid
+Umer Naseer
+Hamza Majeed
+Saud Ul Hassan
+Faiq Rizwan
+Hamza Rashid
+Mohsin Ali
+Usman Ahmed
+Fatima Khan
+Asma Maqbool
+Osama Khan
+Farwa Abbas
+Tehreem Aftab
+Waqas Wasi
+Zain Ali
+Aalia Nazi
